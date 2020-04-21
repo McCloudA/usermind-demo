@@ -1,0 +1,150 @@
+// Styles
+@import "./styles/colors.scss";
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+.App {
+  .title-container {
+    position: absolute;
+    width: 100%;
+  }
+  .grid-container {
+    &.container {
+      margin-left: 0px;
+      margin-right: 0px;
+      width: 100%;
+      .row {
+        background-color: $yellow;
+        &.title-row {
+          text-align: center;
+          h1 {
+            margin-top: 60px;
+            margin-bottom: 60px;
+          }
+        }
+        .chart-container {
+          display: block;
+          margin: 0 auto;
+        }
+        &.InfoRow {
+          min-height: 25vh;
+          .produce-totals {
+            font-style: italic;
+            font-weight: 700;
+          }
+          .sales-info-title {
+            text-align: center;
+            margin-top: 4px;
+          }
+          .sales-info-table {
+            width: 250px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 40px;
+            .checkbox-table-data {
+              text-align: center;
+            }
+            .select-date-checkbox {
+              font-size: 46px;
+            }
+          }
+          .date-table-col {
+            width: 250px;
+          }
+          .InfoRow-entry-title {
+            margin-top: 0px;
+            [class^="fa-"],
+            [class*="fa-"] {
+              vertical-align: middle;
+              margin-right: 12px;
+            }
+            &:hover {
+              cursor: pointer;
+              color: $black;
+            }
+          }
+        }
+      }
+      .total-fruit-sales-info-row {
+        font-style: italic;
+        font-weight: 700;
+      }
+      .no-data-yet {
+        text-align: center;
+        font-weight: 700;
+        font-size: 18px;
+      }
+    }
+  }
+  .App-title {
+    color: $white;
+    font-weight: 600;
+    font-size: 3.8em;
+    margin-top: 35vh;
+    text-align: center;
+  }
+  .App-header {
+    background: url("./imgs/bg-pattern.png"), $purple;
+    background: url("./imgs/bg-pattern.png"), -webkit-linear-gradient(to left, $purple, $crimson);
+    background: url("./imgs/bg-pattern.png"), linear-gradient(to left, $purple, $crimson);
+    background-image: url("./imgs/bg-pattern.png"), linear-gradient(to left, rgb(123, 67, 151), rgb(220, 36, 48));
+    height: 100vh;
+    .fa-chevron-down {
+      animation: pulse 3.5s infinite, MoveUpDown 2.3s linear infinite;
+      position: absolute;
+      left: 0%;
+      right: 0%;
+      text-align: center;
+      @include keyframes(pulse) {
+        0%, 100% {
+          color: $white;
+        }
+        50% {
+          color: $yellow;
+        }
+      }
+      @include keyframes(MoveUpDown) {
+        0%, 100% {
+          bottom: 0;
+        }
+        50% {
+          bottom: 75px;
+        }
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .form-control {
+    width: 250px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media screen and (max-width: 576px) and (min-width: 10px) { 
+  .App {
+    .App-title {
+      margin-top: 21vh;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.AddDateInfoForm {
+  .error-msg {
+    width: 260px;
+    .help-block {
+      color: red;
+      font-weight: 500;
+    }
+  }
+  .btn.btn-primary {
+    margin-bottom: 40px;
+  }
+}
